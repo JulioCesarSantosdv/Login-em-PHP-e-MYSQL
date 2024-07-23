@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: goldenrod;
+    overflow: hidden; /* Remover rolagem */
+}
+
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1; /* Coloca o vídeo atrás do conteúdo */
+    object-fit: cover; /* Ajusta o vídeo para cobrir toda a tela */
+}
+
+input  {
+    display: block;
+    height: 55px;
+    width: 90%; /* Ajuste de largura para responsividade */
+    max-width: 400px; /* Largura máxima */
+    margin: 10px auto; /* Centraliza os inputs e botão */
+    border-radius: 30px;
+    /*border: 1px solid rgba(255, 255, 255, 0.5);  Bordas com transparência */
+    outline: none;
+    border: none;
+    font-size: 16pt;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.2); /* Fundo branco transparente */
+    backdrop-filter: blur(10px); /* Efeito de desfoque */
+    -webkit-backdrop-filter: blur(10px); /* Suporte para Safari */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    cursor: pointer;/* Efeito mãozinha no botão */
+}
+input[type="submit"]{
+    background-color: #6b8e23;
+    color: goldenrod;
+}
+
+div#form-body {
+    background: rgba(255, 255, 255, 0.2); /* Fundo branco transparente */
+    width: 90%; /* Ajuste de largura para responsividade */
+    max-width: 420px; /* Largura máxima */
+    margin: 150px auto; /* Centralizando o formulário */
+    padding: 20px;
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37); /* Sombra para destaque */
+    backdrop-filter: blur(10px); /* Efeito de desfoque */
+    -webkit-backdrop-filter: blur(10px); /* Suporte para Safari */
+    border: 1px solid rgba(255, 255, 255, 0.18); /* Bordas com transparência */
+    z-index: 1; /* Colocar o formulário na frente do vídeo */
+    position: relative;
+    text-align: center; /* Centraliza o conteúdo dentro do formulário */
+}
+
+div#form-body h1 ,div#form-body-cad{
+    text-align: center;
+    padding: 20px;
+}
+
+div#form-body-cad{
+ width: 420px;
+ margin: 80px auto 0px auto;
+ 
+}
+
+a {
+    color: goldenrod;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    margin-top: 10px; /* Espaçamento superior */
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries para responsividade */
+
+/* Estilos para tablets */
+@media (max-width: 768px) {
+    body {
+        overflow-y: auto; /* Permite rolagem vertical */
+    }
+
+    div#form-body {
+        margin: 100px auto; /* Ajusta a margem superior para tablets */
+    }
+
+    input, input[type="submit"] {
+        font-size: 14pt; /* Ajuste do tamanho da fonte */
+        height: 50px; /* Ajuste da altura */
+    }
+}
+
+/* Estilos para celulares */
+@media (max-width: 480px) {
+    body {
+        overflow-y: auto; /* Permite rolagem vertical */
+    }
+
+    div#form-body {
+        margin: 50px auto; /* Ajusta a margem superior para celulares */
+        padding: 15px; /* Ajusta o padding para dispositivos menores */
+    }
+
+    input, input[type="submit"] {
+        font-size: 12pt; /* Ajuste do tamanho da fonte */
+        height: 45px; /* Ajuste da altura */
+    }
+
+    div#form-body h1 {
+        font-size: 20pt; /* Ajuste do tamanho da fonte do título */
+        padding: 10px; /* Ajuste do padding do título */
+    }
+}
