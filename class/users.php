@@ -1,8 +1,8 @@
 <?php
-class usuario
+class user
 {
     private $pdo;
-    public  $msgErro = "";
+    public  $msgErro = "";// ok
     public function conectar($nome, $host, $usuario, $senha)
     {
         global $pdo;
@@ -31,7 +31,7 @@ class usuario
              $sql->bindValue(":n",$nome);
              $sql->bindValue(":t",$telefone);
              $sql->bindValue(":e",$email);
-             $sql->bindValue(":s",$senha);
+             $sql->bindValue(":s",md5($senha));
              $sql->execute();
              return true;
         }
@@ -42,6 +42,26 @@ class usuario
     
     {
         global $pdo;
+        //Verificar se o e-mail está cadastrado, se sim
+        $sql = $pdo->prepare("SELECT id_usuario FROM usuarios WHERE email = :e AND senha = :s");
+        $sql->bindValue(":e",$email);
+        $sql->bindValue(":s",md5($senha));
+        $sql->execute();
+        if($sql->rowCount() > 0)
+        {
+            //entrar no sistema(sessão)
+            $dado = $sql->fecth();
+            session_start();
+            $_SESSION['id_usuario'] =   $dado['id_usuario'];
+            return true; //logado com sucesso
+        }
+        else
+        {
+            return false;//não foi possível logar.
+        }
+
+
+        
     }
 
 }
