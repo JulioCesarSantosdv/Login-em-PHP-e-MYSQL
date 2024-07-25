@@ -36,7 +36,8 @@ $u = new User(); // Supondo que a classe se chama User
         $confirmarSenha = htmlspecialchars($_POST['confSenha']); // Corrigido para confSenha
 
         // Verificar se está preenchido
-        if (!empty($nome) && !empty($telefone) && !empty($email) && !empty($senha) && !empty($confirmarSenha)) {
+        if (!empty($nome) && !empty($telefone) && !empty($email) && !empty($senha) && !empty($confirmarSenha))
+         {
             // Então será feito o envio
             $u->conectar("projeto_login", "localhost", "root", "");
             if ($u->msgErro == "") { // OK

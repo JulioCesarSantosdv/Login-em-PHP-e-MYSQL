@@ -121,3 +121,22 @@ a:hover {
         padding: 10px; /* Ajuste do padding do título */
     }
 }
+
+div#success-message{
+    width: 390px; 
+    margin: 10px auto;
+    padding: 10px;
+    background-color: rgba(50,205,50.3);
+    border: 1px solid rgba(34,139,34);
+
+}
+
+div.error-message{
+    width: 390px; 
+    margin: 10px auto;
+    padding: 10px;
+    background-color: rgba(114, 250, 125, 0.87);
+    border: 1px solid rgba(42, 165, 118, 0.664);
+
+
+}

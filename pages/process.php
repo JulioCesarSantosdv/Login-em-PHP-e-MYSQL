@@ -15,20 +15,45 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($u->msgErro === "") {
             if ($senha === $confirmarSenha) {
                 if ($u->cadastrar($nome, $telefone, $email, $senha)) {
-                    echo "Cadastrado com sucesso! <a href='login.php'>Clique aqui para fazer login</a>";
+                    ?>
+                    <div id="success-message">
+                        Cadastrado com sucesso!<br>
+                        <a href='login.php'>Clique aqui para fazer login</a>
+                    </div>
+                    <?php
                 } else {
-                    echo "Email já cadastrado!";
+                    ?>
+                    <div class="error-message">
+                        Email já cadastrado!
+                    </div>
+                    <?php
                 }
             } else {
-                echo "As senhas não coincidem!";
+                ?>
+                <div class="error-message">
+                    As senhas não coincidem!
+                </div>
+                <?php
             }
         } else {
-            echo "Erro ao conectar ao banco de dados: " . $u->msgErro;
+            ?>
+            <div class="error-message">
+                <?php echo "Erro ao conectar ao banco de dados: " . $u->msgErro;?>
+            </div>
+            <?php
         }
     } else {
-        echo "Preencha todos os campos!";
+        ?>
+        <div class="error-message">
+            Preencha todos os campos!
+        </div>
+        <?php
     }
 } else {
-    echo "Método de solicitação inválido.";
+    ?>
+    <div class="error-message">
+        Método de solicitação inválido.
+    </div>
+    <?php
 }
 ?>
