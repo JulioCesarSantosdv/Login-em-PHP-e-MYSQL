@@ -11,6 +11,16 @@ Este é um projeto simples de sistema de login para a web utilizando PHP e MySQL
 - `css/style.css`: Arquivo CSS para estilização das páginas.
 - `video/fundo3.mp4` e `video/fundo6.mp4`: Vídeos de fundo para as páginas.
 - Crédito dos vídeos ( https://pixabay.com/)
+  ## Tecnologias Utilizadas
+
+| Tecnologia          | Versão                               |
+|---------------------|--------------------------------------|
+| XAMPP               | 8.0.30-0                             |
+| PHP                 | 8.1                                  |
+| PHP MySQL           |8.3.6                                 |
+| JavaScript          | ECMAScript 5.1.                      |
+| CSS                 | CSS 3                                |
+| HTML                | 5                                    |
 ## Configuração do Banco de Dados
 
 Crie um banco de dados MySQL e uma tabela `usuarios` com a seguinte estrutura:
