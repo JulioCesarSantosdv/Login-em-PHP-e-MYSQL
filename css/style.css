@@ -1,153 +1,19 @@
-/* Reseta margens e preenchimentos, e define box-sizing para border-box em todos os elementos */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Estiliza o corpo da página */
-body {
-    font-family: Arial, sans-serif; /* Define a fonte do corpo */
-    color: goldenrod; /* Define a cor do texto */
-    overflow: hidden; /* Remove a rolagem da página */
-}
-
-/* Estiliza o vídeo de fundo */
-#bg-video {
-    position: fixed; /* Fixa o vídeo na tela */
-    top: 0;
-    left: 0;
-    min-width: 100%; /* Garante que o vídeo cubra toda a largura */
-    min-height: 100%; /* Garante que o vídeo cubra toda a altura */
-    z-index: -1; /* Coloca o vídeo atrás do conteúdo */
-    object-fit: cover; /* Ajusta o vídeo para cobrir toda a tela */
-}
-
-/* Estiliza todos os inputs e botões */
-input  {
-    display: block; /* Exibe o input como bloco */
-    height: 55px; /* Define a altura do input */
-    width: 90%; /* Define a largura do input para ser responsiva */
-    max-width: 400px; /* Define a largura máxima */
-    margin: 10px auto; /* Centraliza o input e o botão */
-    border-radius: 30px; /* Arredonda os cantos */
-    outline: none; /* Remove a borda de foco padrão */
-    border: none; /* Remove a borda padrão */
-    font-size: 16pt; /* Define o tamanho da fonte */
-    padding: 10px 20px; /* Adiciona preenchimento interno */
-    background: rgba(255, 255, 255, 0.2); /* Fundo branco com transparência */
-    backdrop-filter: blur(10px); /* Aplica um desfoque ao fundo */
-    -webkit-backdrop-filter: blur(10px); /* Suporte para Safari */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra leve */
-    cursor: pointer; /* Altera o cursor para uma mãozinha */
-}
-
-/* Estiliza o botão de submit */
-input[type="submit"] {
-    background-color: #375200; /* Define a cor de fundo */
-    color: rgb(126, 8, 4); /* Define a cor do texto */
-}
-
-/* Estiliza o formulário de login */
-div#form-body {
-    background: rgba(255, 255, 255, 0.2); /* Fundo branco com transparência */
-    width: 90%; /* Define a largura do formulário */
-    max-width: 420px; /* Define a largura máxima */
-    margin: 150px auto; /* Centraliza o formulário com margem superior */
-    padding: 20px; /* Adiciona preenchimento interno */
-    border-radius: 10px; /* Arredonda os cantos */
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37); /* Adiciona uma sombra para destaque */
-    backdrop-filter: blur(10px); /* Aplica um desfoque ao fundo */
-    -webkit-backdrop-filter: blur(10px); /* Suporte para Safari */
-    border: 1px solid rgba(255, 255, 255, 0.18); /* Borda com transparência */
-    z-index: 1; /* Garante que o formulário fique acima do vídeo */
-    position: relative; /* Define o posicionamento relativo */
-    text-align: center; /* Centraliza o conteúdo dentro do formulário */
-}
-
-/* Estiliza o título e o formulário de cadastro */
-div#form-body h1,
-div#form-body-cad {
-    text-align: center; /* Centraliza o texto */
-    padding: 20px; /* Adiciona preenchimento interno */
-}
-
-/* Estiliza o formulário de cadastro */
-div#form-body-cad {
-    width: 420px; /* Define a largura do formulário de cadastro */
-    margin: 80px auto 0; /* Centraliza o formulário com margem superior */
-}
-
-/* Estiliza os links */
-a {
-    color: goldenrod; /* Define a cor do link */
-    text-decoration: none; /* Remove o sublinhado padrão */
-    text-align: center; /* Centraliza o texto do link */
-    display: block; /* Exibe o link como bloco */
-    margin-top: 10px; /* Adiciona margem superior */
-}
-
-/* Estiliza o link quando o cursor está sobre ele */
-a:hover {
-    text-decoration: underline; /* Adiciona sublinhado ao passar o cursor */
-}
-
-/* Media Queries para ajustar o layout em dispositivos menores */
-
-/* Estilos para tablets */
-@media (max-width: 768px) {
-    body {
-        overflow-y: auto; /* Permite rolagem vertical em tablets */
-    }
-
-    div#form-body {
-        margin: 100px auto; /* Ajusta a margem superior para tablets */
-    }
-
-    input,
-    input[type="submit"] {
-        font-size: 14pt; /* Ajusta o tamanho da fonte */
-        height: 50px; /* Ajusta a altura */
-    }
-}
-
-/* Estilos para celulares */
-@media (max-width: 480px) {
-    body {
-        overflow-y: auto; /* Permite rolagem vertical em celulares */
-    }
-
-    div#form-body {
-        margin: 50px auto; /* Ajusta a margem superior para celulares */
-        padding: 15px; /* Ajusta o padding */
-    }
-
-    input,
-    input[type="submit"] {
-        font-size: 12pt; /* Ajusta o tamanho da fonte */
-        height: 45px; /* Ajusta a altura */
-    }
-
-    div#form-body h1 {
-        font-size: 20pt; /* Ajusta o tamanho da fonte do título */
-        padding: 10px; /* Ajusta o padding do título */
-    }
-}
-
 /* Estiliza a mensagem de sucesso */
-div#success-message {
+div.message.success {
     width: 390px; 
     margin: 10px auto;
     padding: 10px;
     background-color: rgba(42, 165, 118, 0.664); /* Cor de fundo verde claro  */
-    border: 1px solid rgba(165, 136, 42, 0.664); /* Borda dourada*/
+    border: 1px solid rgba(165, 136, 42, 0.664); /* Borda dourada */
+    display: none; /* Inicialmente oculta */
 }
 
 /* Estiliza a mensagem de erro */
-div.error-message {
+div.message.error {
     width: 390px; 
     margin: 10px auto;
     padding: 10px;
     background-color: rgba(42, 165, 118, 0.664); /* Cor de fundo verde claro  */
-    border: 1px solid rgba(165, 136, 42, 0.664); /* Borda dourada*/
+    border: 1px solid rgba(255, 69, 58, 0.664); /* Borda vermelha */
+    display: none; /* Inicialmente oculta */
 }

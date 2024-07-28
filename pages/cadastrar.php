@@ -64,5 +64,14 @@ $u = new User();
         }
     }
     ?>
+    <script>
+            // Esconde a mensagem após 2 segundos
+        setTimeout(function() {
+            var message = document.getElementById('message');
+            if (message) {
+                message.style.display = 'none';
+            }
+        }, 2000);
+    </script>
 </body>
 </html>
