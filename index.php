@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </video>
     <div id="form-body"> <!-- Container para o formulário de login -->
         <h1>Entrar</h1> <!-- Título do formulário -->
-        <form method="POST" action=""> <!-- Formulário de login -->
+        <form method="POST" action="pages/process.php"> <!-- Formulário de login -->
             <input type="email" placeholder="usuário" name="email" maxlength="40" required> <!-- Campo para o email -->
             <input type="password" placeholder="senha" name="senha" maxlength="15" required> <!-- Campo para a senha -->
             <input type="submit" value="ACESSAR"> <!-- Botão de envio do formulário -->

@@ -1,19 +1,140 @@
-/* Estiliza a mensagem de sucesso */
-div.message.success {
-    width: 390px; 
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("video/fundo3.mp4");
+    background-position: 50% 70%;
+    color:#DAA520;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input {
+    display: block;
+    height: 55px;
+    width: 400px;
     margin: 10px auto;
+    border-radius: 30px;
+    border: 1px solid black;
+    font-size: 16pt;
+    padding: 10px 20px;
+}
+
+div#form-body {
+    position: absolute; /* Posiciona o formulário acima do vídeo */
+    top: 50%; /* Centraliza o formulário verticalmente */
+    left: 50%; /* Centraliza o formulário horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta a posição para centralizar */
+    background-color: rgba(255, 255, 255, 0.2); /* Fundo branco semi-transparente */
+    backdrop-filter: blur(10px); /* Aplica o efeito de desfoque */
+    padding: 20px;
+    border-radius: 30px; /* Bordas arredondadas */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra ao redor do formulário */
+    z-index: 1; /* Garante que o formulário fique acima do vídeo */
+    text-align: center;
+    max-width: 90%; /* Garante que o formulário não exceda a largura da tela */
+    color: #DAA520; /* Cor dourada */
+}
+
+/* Estiliza o título do formulário */
+#form-body h1 {
+    text-align: center;
+    margin-bottom: 20px; /* Espaço abaixo do título */
+}
+
+/* Estiliza os campos de entrada do formulário */
+#form-body input[type="email"],
+#form-body input[type="password"] {
+    width: calc(100% - 40px); /* Largura total menos padding */
     padding: 10px;
-    background-color: rgba(42, 165, 118, 0.664); /* Cor de fundo verde claro  */
-    border: 1px solid rgba(165, 136, 42, 0.664); /* Borda dourada */
-    display: none; /* Inicialmente oculta */
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estiliza o botão de envio do formulário */
+#form-body input[type="submit"] {
+    width: calc(100% - 40px); /* Largura total menos padding */
+    padding: 10px;
+    background-color: #4CAF50; /* Cor de fundo verde */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.3s ease; /* Transição suave */
+    box-shadow: 0 4px #2E7D32; /* Efeito de sombra 3D */
+}
+
+#form-body input[type="submit"]:hover {
+    transform: translateY(-2px); /* Efeito de elevação ao passar o mouse */
+    box-shadow: 0 6px #2E7D32; /* Efeito de sombra 3D mais pronunciado */
+}
+
+/* Estiliza o link para a página de cadastro */
+#form-body a {
+    display: block;
+    margin-top: 20px;
+    color: #333;
+    text-decoration: none;
+}
+
+#form-body a strong {
+    color: #4CAF50; /* Cor verde */
+}
+
+a{
+    color:#DAA520;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+}
+
+a:hover{
+    text-decoration: underline;
 }
 
 /* Estiliza a mensagem de erro */
-div.message.error {
-    width: 390px; 
-    margin: 10px auto;
+.error-message {
+    width: calc(100% - 40px);
+    max-width: 390px;
     padding: 10px;
-    background-color: rgba(42, 165, 118, 0.664); /* Cor de fundo verde claro  */
-    border: 1px solid rgba(255, 69, 58, 0.664); /* Borda vermelha */
-    display: none; /* Inicialmente oculta */
+    background-color: rgba(255, 69, 58, 0.8); /* Cor de fundo vermelha semi-transparente */
+    border: 1px solid rgba(255, 69, 58, 1); /* Borda vermelha */
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+/* Estiliza a mensagem de sucesso */
+.success-message {
+    width: calc(100% - 40px);
+    max-width: 390px;
+    padding: 10px;
+    background-color: rgba(42, 165, 118, 0.8); /* Cor de fundo verde claro semi-transparente */
+    border: 1px solid rgba(42, 165, 118, 1); /* Borda verde */
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+/* Estiliza a responsividade */
+@media (max-width: 768px) {
+    #form-body {
+        width: 90%; /* Ajusta a largura do formulário em dispositivos menores */
+        padding: 15px;
+    }
+    
+    #form-body input[type="email"],
+    #form-body input[type="password"],
+    #form-body input[type="submit"] {
+        width: 100%; /* Largura total para campos e botão */
+    }
+}
+
+@media (max-width: 480px) {
+    #form-body {
+        width: 95%; /* Ajusta ainda mais a largura do formulário em dispositivos muito pequenos */
+    }
 }
